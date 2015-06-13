@@ -1,0 +1,557 @@
+<style>
+     body 
+      {
+        background: url('images/backback.jpg') no-repeat center center fixed; //back3.png
+        background-color: #151515;
+        background-size: cover;
+        
+      }
+    </style>
+<br>
+<br>
+<br>
+<br>
+
+<body>
+<font face="futura">
+
+<div id="oout">
+  <div class="iinn">
+
+
+<div style="position: absolute; top: 19px; width: 100%; height: 43%;left:0;background-color: beige; z-index: 11111111; border-bottom: 3px solid black;">
+
+  <div class="ppp" style="position: relative; top: 11px;">It's {{date | date:'fullDate'}}</div> 
+
+    <div class="dropdown" style="  position: absolute; right: 2%; margin-top: -1.8%;">
+    <button class="btn btn-default dropdown-toggle button" type="button" id="orderMenu" data-toggle="dropdown" style="color: orange; background-color: black; opacity: 1; ">My Orders
+    <span class="caret"></span></button>
+
+    <ul class="dropdown-menu" role="menu" aria-labelledby="orderMenu" 
+              style="width: 406px;   background-color: beige;position: absolute; margin-top: 6.7%; margin-left: -281px; overflow: auto; height: 333px;">
+      
+      <li role="presentation"  ng-repeat="item in orderss | startFrom: 1">
+        <a role="menuitem" ng-repeat="name in item.name" style="color: green;">{{name}}</a>
+         <a role="menuitem" style="color: orange;">{{item.people}} persons</a>
+         <a role="menuitem" style="color: orange;">Table no. {{item.table}}</a>
+                <a role="menuitem" style="color: green;">{{infoo.currency}}&nbsp;{{item.price}}</a>
+         <a role="menuitem" style="color: black;">Order issued on {{item.date | date:'medium'}}</a>
+        <div role="presentation" class="divider" style="color: orange;"></div>
+      </li>
+
+
+    </ul>
+  </div>
+
+
+</div><br>
+
+   <nav class="navbar navbar-default col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background: black; position: relative;width:100%; border-radius: 25px; height: 100px; top: 80px;">
+
+   <div class="ppp1">Hey {{infoo.namee}}, you have {{infoo.currency}}&nbsp;{{infoo.savings}} in your wallet. <br>Okay, let me <a ng-click="checkEXPENSES()" style="text-decoration: none; cursor: pointer;">refresh my expenses</a>.</div>
+   
+ </nav>
+
+<!--<p>You have {{}} until your next ...specified expense </p>-->
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<!--<div class="bs-example">
+    <div class="list-group" ng-repeat="item in money | startFrom: 1">
+        <div class="list-group-item">{{item.name}} {{item.value}} {{item.date}} {{item.type}} {{item.repeat}}</div>
+    </div>
+</div> -->
+
+ 
+
+<pev>
+  <div class="bs-example" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="min-width: 300px; position: relative; top: 10px;">
+    <div class="list-group " ng-repeat="item in money | startFrom: 1" style="min-width: 300px;">
+        <div class="list-group-item thumbnail" style="background: #333; color: white; height: 150px; border: 2px solid #aaa; width: 100%; top: 1px;">
+          
+          <div style="position: relative; margin-left: 35%; color: white;">{{item.name}}</div> 
+
+          <div id="moneyy" style="color: orange; margin-left: 35%; margin-top: 10px;"><i class="fa fa-money"></i></div>
+
+             <div class="itemPrice" style="position: relative; color: white; margin-left:42%; margin-top: -20px;"> {{infoo.currency}}&nbsp;{{item.value}}
+             </div>
+
+         <!-- <div style="position: relative; color: orange; left: 80%; top: -27px;"> </div>-->
+          <div id="date3" style="color: orange; margin-left: 35%; margin-top: 33px;"><i class="fa fa-calendar-o"></i></div>
+
+          <div class="itemDate" style="position: relative; color: white; margin-left: 42%; margin-top: -18px; font-weight: normal; font-size: 13px;">
+            {{item.date}} </div>
+            
+           
+             </div> 
+
+        <img src="{{item.pic}}" id="image66"></img>
+        <div ng-if="item.type == 'outgoing'" style="margin-left: 45%; margin-top: -35px;"> <div id="icon" > <i class="fa fa-arrow-up" 
+          style="color: orange; height: 100%; width: 100%;"><h style="margin-left: -60px; color: white;">Type:&nbsp;</h></i></div></div>
+          <div ng-if="item.type == 'incoming'" style="margin-left: 45%; margin-top: -35px;"> <div id="icon"  ><i class="fa fa-arrow-down" 
+            style="color: orange; height: 100%; width: 100%;"><h style="margin-left: -60px; color: white;">Type:&nbsp;</h></i>
+          </div></div>
+    </div>
+</div></pev>
+
+
+</div>
+
+<br>
+<br>
+<br>
+
+<br>
+<nav class="navbar navbar-default navbar-fixed-bottom" style="position: fixed; bottom: 0; opacity: 0.9; background: #151515; border-top: 5px solid #000; z-index: 9999999; height: 3%; ">
+
+<a id="incoming" class="col-lg-2 col-md-2 col-sm-2 col-xs-2" data-toggle="modal" data-target="#myModalin" style="font-size: 15px;border: 1px solid orange; border-radius: 20px; padding-left: 84px;"><font face="futura" style="font-weight: normal;">Incoming</font></a>
+<a id="outgoing" class="col-lg-2 col-md-2 col-sm-2 col-xs-2" data-toggle="modal" data-target="#myModalout" style="font-size: 15px;left: 471px;border: 1px solid orange; border-radius: 20px; padding-left: 84px;"><font face="futura" style="font-weight: normal;">Outgoing</font></a>
+<a id="restaurant" class="col-lg-3 col-md-3 col-sm-3 col-xs-3" data-toggle="modal" data-target="#myModalrest" style="border: 3px solid green;border-radius: 20px; padding-left: 115px; "><font face="futura" >Restaurant Order</font></a>
+
+<a id="separator"  data-toggle="modal" data-target="#myModalrest" style="border: 1px solid green; "> &nbsp;</a>
+</nav>
+
+
+
+<div style="z-index: 999999999; position: absolute; top: 14%; left: 23%;" class="modal" id="myModalin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog col-lg-9 col-md-9 col-sm-9 col-xs-9" >
+    <div class="modal-content">
+      <div class="modal-header" style="  background: black;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="reset1()"><span aria-hidden="true" style="color: white;">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: orange;">Incoming</h4>
+      </div>
+      <div class="modal-body">
+
+         <!-- <pre style=" height: 260px; ">-->
+
+
+      <!--<input style="width: 40%;" type="text" class="form-control" id="nameOut" placeholder="Name" ng-model="incoming.name">--> 
+      <!--<input style="width: 40%;" type="text" class="form-control" id="dateOut" placeholder="Date" ng-model="incoming.date">-->
+       <button style="width: 40%;" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{incoming.name}}
+        <span class="caret"></span></button>
+     
+
+        <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="menu1" 
+                        style="position: absolute; top: 48px; left: 18px;">
+          
+            <li role="presentation" ng-click="incoming.name = 'Accommodation'"><a role="menuitem" href="">Accommodation </a></li>
+             <li role="presentation" ng-click="incoming.name = 'Allowance'"><a role="menuitem" href="">Allowance </a></li>
+          <li role="presentation" ng-click="incoming.name = 'Audio/TV equipment'"><a role="menuitem" href="">Audio/TV equipment</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Awards Prizes'"><a role="menuitem" href="">Awards Prizes</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Alcohol'"><a role="menuitem" href="">Alcohol</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Books'"><a role="menuitem" href="">Books</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Breakfast'"><a role="menuitem" href="">Breakfast </a></li>
+
+  <li role="presentation" ng-click="incoming.name = 'Corporate Card Charges'"><a role="menuitem" href="">Corporate Card Charges</a></li>
+              <li role="presentation" ng-click="incoming.name = 'Currency Charge'"><a role="menuitem" href="">Currency Charge</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Close Friend give-away'"><a role="menuitem" href="">Close Friend give-away</a></li>
+
+            <li role="presentation" ng-click="incoming.name = 'Dinner'"><a role="menuitem" href="">Dinner</a></li>
+
+
+             <li role="presentation" ng-click="incoming.name = 'Electronic Equipment Purchases'"><a role="menuitem" href="">Electronic Equipment Purchases</a></li>
+      <li role="presentation" ng-click="incoming.name = 'Entrance Fees Exhibitions/Conferences'"><a role="menuitem" href="">Entrance Fees Exhibitions/Conferences</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Entrance Fees Special Events'"><a role="menuitem" href="">Entrance Fees Special Events</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Evening Meal'"><a role="menuitem" href="">Evening Meal</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Entertainment'"><a role="menuitem" href="">Entertainment</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Exam Fees'"><a role="menuitem" href="">Exam Fees</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Footwear'"><a role="menuitem" href="">Footwear</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Family'"><a role="menuitem" href="">Family</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Furniture'"><a role="menuitem" href="">Furniture</a></li>
+            <li role="presentation" ng-click="incoming.name = 'Fund/Give-away'"><a role="menuitem" href="">Fund/Give-away</a></li>
+            <li role="presentation" ng-click="incoming.name = 'Fax Calls'"><a role="menuitem" href="">Fax Calls</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Field Trips'"><a role="menuitem" href="">Field Trips</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Fuel'"><a role="menuitem" href="">Fuel</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Fun Material'"><a role="menuitem" href="">Fun Material</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Fun Stuff'"><a role="menuitem" href="">Fun Stuff</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Gifts'"><a role="menuitem" href="">Gifts</a></li>
+          
+          <li role="presentation" ng-click="incoming.name = 'Hand Tools'"><a role="menuitem" href="">Hand Tools</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Hospitality'"><a role="menuitem" href="">Hospitality</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Hobby Equipment'"><a role="menuitem" href="">Hobby Equipment</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Home Equipment'"><a role="menuitem" href="">Home Equipment</a></li>
+
+
+          <li role="presentation" ng-click="incoming.name = 'Insurance Excess'"><a role="menuitem" href="">Insurance Excess</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Internet'"><a role="menuitem" href="">Internet</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Interview Expenses - Academic'"><a role="menuitem" href="">Interview Expenses - Academic</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Interview Expenses - Non-Academic'"><a role="menuitem" href="">Interview Expenses - Non-Academic</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Journals/Periodicals'"><a role="menuitem" href="">Journals/Periodicals</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Laundry'"><a role="menuitem" href="">Laundry</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Lodging Allowance'"><a role="menuitem" href="">Lodging Allowance</a></li>
+           <li role="presentation" ng-click="incoming.name = 'Lunch'"><a role="menuitem" href="">Lunch</a></li>
+
+           <li role="presentation" ng-click="incoming.name = 'Manuscripts'"><a role="menuitem" href="">Manuscripts</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Meal'"><a role="menuitem" href="">Meal </a></li>
+          <li role="presentation" ng-click="incoming.name= 'Medical Insurance'"><a role="menuitem" href="">Medical Insurance</a></li>
+
+           <li role="presentation" ng-click="incoming.name = 'Newspapers'"><a role="menuitem" href="">Newspapers</a></li>
+
+          
+          <li role="presentation" ng-click="incoming.name = 'Occupational Health Supplies'"><a role="menuitem" href="">Occupational Health Supplies</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Pet'"><a role="menuitem" href="">Pet</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Pet Health'"><a role="menuitem" href="">Pet Health</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Records Checks'"><a role="menuitem" href="">Records Checks</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Rent'"><a role="menuitem" href="">Rent</a></li>
+
+          <li role="presentation" ng-click="incoming.name = 'Snacks'"><a role="menuitem" href="">Snacks</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Schooling'"><a role="menuitem" href="">Schooling</a></li>
+          <li role="presentation" ng-click="incoming.name = 'Savings'"><a role="menuitem" href="">Savings</a></li>
+              
+          <li role="presentation" ng-click="incoming.name = 'Trip'"><a role="menuitem" href="">Trip</a></li>
+         <li role="presentation" ng-click="incoming.name = 'Travel'"><a role="menuitem" href="">Travel</a></li>
+
+      
+
+        </ul>
+
+       
+
+          <br> <br>
+          <br>
+      
+            <div class="input-group" style="width: 40%;">
+              
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+
+            </div>
+    
+          <br>
+
+          <div >
+            <div style="top: 26px; position: relative;">{{infoo.currency}}</div>
+  
+     <input style="width: 15%; left: 23px; top: 0px; position: relative;" type="text" class="form-control" id="valueOut" placeholder="value" ng-model="incoming.value"> </input> 
+   </div>
+
+
+
+      <!--<img id="chooseFile" data-inline="true" data-icon="plus" class="img-circle img-round" style="position: absolute; right: 40px; top: 50px;"></img>-->
+
+      <button class="thumbnail img-circle" id="chooseFile" data-inline="true" data-icon="plus" class="button" style="position: absolute; right: 40px; top: 50px;"></button>
+ 
+    
+        
+          <div data-role="content">
+            
+            <div class="hiddenfile">
+              <input id="infile" type="file"  data-clear-btn="false" name="image" accept="image/*" capture>
+            </div>
+
+            <div id="preview"></div>
+      </div>
+
+
+
+   <!-- </pre>-->
+
+
+
+     <!-- <label><input type="checkbox" value="">   Repeat</label>
+      or
+       <input style="width: 40%;" type="text" class="form-control" id="repeatdateOut" placeholder="Repeat on" ng-model="incoming.repeatDate"><br> -->
+
+
+      </div>
+      <div class="modal-footer" style="  background: black;">
+        <button type="button" class="button btn btn-warning" ng-click="putIn()">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div style="z-index: 999999999999; position: absolute; top: 14%; left: 23%;" class="modal" id="myModalout" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog col-lg-9 col-md-9 col-sm-9 col-xs-9" >
+    <div class="modal-content">
+      <div class="modal-header" style="background: black;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="reset()"><span aria-hidden="true" style="color: white;">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: orange;">Outgoing</h4>
+      </div>
+      <div class="modal-body" >
+
+    	<!--<pre style="height: 260px; ">-->
+
+    <!-- <input style="width: 40%;" type="text" class="form-control" id="nameOut" placeholder="Name" ng-model="outgoing.name">--> 
+    	<!--<input style="width: 40%;" type="text" class="form-control" id="dateOut" placeholder="Date" ng-model="outgoing.date">-->
+         <button style="width: 40%;" class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">{{outgoing.name}}
+        <span class="caret"></span></button>
+      
+        <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="menu1" 
+                      style="position: absolute; top: 48px; left: 18px;">
+          
+
+            <li role="presentation" ng-click="outgoing.name = 'Accommodation'"><a role="menuitem" href="">Accommodation </a></li>
+             <li role="presentation" ng-click="outgoing.name = 'Allowance'"><a role="menuitem" href="">Allowance </a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Audio/TV equipment'"><a role="menuitem" href="">Audio/TV equipment</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Awards Prizes'"><a role="menuitem" href="">Awards Prizes</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Alcohol'"><a role="menuitem" href="">Alcohol</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Books'"><a role="menuitem" href="">Books</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Breakfast'"><a role="menuitem" href="">Breakfast </a></li>
+
+  <li role="presentation" ng-click="outgoing.name = 'Corporate Card Charges'"><a role="menuitem" href="">Corporate Card Charges</a></li>
+              <li role="presentation" ng-click="outgoing.name = 'Currency Charge'"><a role="menuitem" href="">Currency Charge</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Close Friend give-away'"><a role="menuitem" href="">Close Friend give-away</a></li>
+
+            <li role="presentation" ng-click="outgoing.name = 'Dinner'"><a role="menuitem" href="">Dinner</a></li>
+
+
+             <li role="presentation" ng-click="outgoing.name = 'Electronic Equipment Purchases'"><a role="menuitem" href="">Electronic Equipment Purchases</a></li>
+      <li role="presentation" ng-click="outgoing.name = 'Entrance Fees Exhibitions/Conferences'"><a role="menuitem" href="">Entrance Fees Exhibitions/Conferences</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Entrance Fees Special Events'"><a role="menuitem" href="">Entrance Fees Special Events</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Evening Meal'"><a role="menuitem" href="">Evening Meal</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Entertainment'"><a role="menuitem" href="">Entertainment</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Exam Fees'"><a role="menuitem" href="">Exam Fees</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Footwear'"><a role="menuitem" href="">Footwear</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Family'"><a role="menuitem" href="">Family</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Furniture'"><a role="menuitem" href="">Furniture</a></li>
+            <li role="presentation" ng-click="outgoing.name = 'Fund/Give-away'"><a role="menuitem" href="">Fund/Give-away</a></li>
+            <li role="presentation" ng-click="outgoing.name = 'Fax Calls'"><a role="menuitem" href="">Fax Calls</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Field Trips'"><a role="menuitem" href="">Field Trips</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Fuel'"><a role="menuitem" href="">Fuel</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Fun Material'"><a role="menuitem" href="">Fun Material</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Fun Stuff'"><a role="menuitem" href="">Fun Stuff</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Gifts'"><a role="menuitem" href="">Gifts</a></li>
+          
+          <li role="presentation" ng-click="outgoing.name = 'Hand Tools'"><a role="menuitem" href="">Hand Tools</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Hospitality'"><a role="menuitem" href="">Hospitality</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Hobby Equipment'"><a role="menuitem" href="">Hobby Equipment</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Home Equipment'"><a role="menuitem" href="">Home Equipment</a></li>
+
+
+          <li role="presentation" ng-click="outgoing.name = 'Insurance Excess'"><a role="menuitem" href="">Insurance Excess</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Internet'"><a role="menuitem" href="">Internet</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Interview Expenses - Academic'"><a role="menuitem" href="">Interview Expenses - Academic</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Interview Expenses - Non-Academic'"><a role="menuitem" href="">Interview Expenses - Non-Academic</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Journals/Periodicals'"><a role="menuitem" href="">Journals/Periodicals</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Laundry'"><a role="menuitem" href="">Laundry</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Lodging Allowance'"><a role="menuitem" href="">Lodging Allowance</a></li>
+           <li role="presentation" ng-click="outgoing.name = 'Lunch'"><a role="menuitem" href="">Lunch</a></li>
+
+           <li role="presentation" ng-click="outgoing.name = 'Manuscripts'"><a role="menuitem" href="">Manuscripts</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Meal'"><a role="menuitem" href="">Meal </a></li>
+          <li role="presentation" ng-click="outgoing.name= 'Medical Insurance'"><a role="menuitem" href="">Medical Insurance</a></li>
+
+           <li role="presentation" ng-click="outgoing.name = 'Newspapers'"><a role="menuitem" href="">Newspapers</a></li>
+
+          
+          <li role="presentation" ng-click="outgoing.name = 'Occupational Health Supplies'"><a role="menuitem" href="">Occupational Health Supplies</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Pet'"><a role="menuitem" href="">Pet</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Pet Health'"><a role="menuitem" href="">Pet Health</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Records Checks'"><a role="menuitem" href="">Records Checks</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Rent'"><a role="menuitem" href="">Rent</a></li>
+
+          <li role="presentation" ng-click="outgoing.name = 'Snacks'"><a role="menuitem" href="">Snacks</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Schooling'"><a role="menuitem" href="">Schooling</a></li>
+          <li role="presentation" ng-click="outgoing.name = 'Savings'"><a role="menuitem" href="">Savings</a></li>
+              
+          <li role="presentation" ng-click="outgoing.name = 'Trip'"><a role="menuitem" href="">Trip</a></li>
+         <li role="presentation" ng-click="outgoing.name = 'Travel'"><a role="menuitem" href="">Travel</a></li>
+
+      
+
+        </ul>
+       
+
+        <br>
+         <br>
+         <br>
+
+            <div class="input-group" style="width: 40%;">
+              
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dtt" is-open="openedd" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close"/>
+
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="openn($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+
+            </div>
+        <br>
+
+        <div >
+          <div style="top: 26px; position: relative;">{{infoo.currency}}</div>
+
+    	<input style="width: 15%; left: 23px; top: 0px; position: relative;" type="text" class="form-control" id="valueOut" placeholder="value" ng-model="outgoing.value">
+    </input> 
+  </div>
+
+      <!--<img id="chooseFile" data-inline="true" data-icon="plus" class="img-circle img-round" style="position: absolute; right: 40px; top: 50px;"></img>-->
+
+      <button class="thumbnail img-circle" id="chooseFile2" data-inline="true" data-icon="plus" class="button" style="position: absolute; right: 40px; top: 50px;"></button>
+ 
+    
+        
+          <div data-role="content">
+            
+            <div class="hiddenfile">
+              <input id="outfile" type="file"  data-clear-btn="false" name="image" accept="image/*" capture>
+            </div>
+
+            <div id="preview"></div>
+      </div>
+
+
+
+
+   <!-- </pre>-->
+
+
+    	<!--<label><input type="checkbox" value="">   Repeat</label>
+    	or
+    	 <input style="width: 40%;" type="text" class="form-control" id="repeatdateOut" placeholder="Repeat on" ng-model="outgoing.repeatDate"><br> -->
+
+
+
+
+      </div>
+      <div class="modal-footer" style="  background: black;">
+        <button type="button" class="button btn btn-warning" ng-click="putOut()">Apply</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</font>
+
+<div class="jumbotron" style="top: 0; position: fixed; background: #151515; opacity: 0.4; width: 100%; height: 100%; 
+z-index: 0;"></div>
+
+
+
+
+
+<!--<div modal-show="showDialog" style="z-index: 999999999999; position: absolute; top: 14%; left: 23%;" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog col-lg-9 col-md-9 col-sm-9 col-xs-9" >
+
+    <div class="modal-content">
+      <div class="modal-header" style="background: black;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click=""><span aria-hidden="true" style="color: white;">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: orange;">Outgoing</h4>
+      </div>
+      <div class="modal-body" >
+
+      </div>
+
+      <div class="modal-footer" style="  background: black;">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>-->
+
+
+<div modal-show="showDialog" style="z-index: 999999999999; position: absolute; top: 14%; left: 23%;" class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog col-lg-9 col-md-9 col-sm-9 col-xs-9">
+    <div class="modal-content">
+      <div class="modal-header" style="background: black;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: orange;">Expenses Warning Message</h4>
+      </div>
+      <div class="modal-body">
+        {{infoo.namee}}, you still have {{infoo.currency}}&nbsp;{{infoo.savings}} in your wallet. <br> Please be careful until you get paid again.
+      </div>
+      <div class="modal-footer" style="  background: black;">
+        <button type="button" class="button btn btn-default" data-dismiss="modal">Okay, I understand</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="z-index: 999999999999; position: absolute; top: 14%; left: 23%; " class="modal" id="myModalrest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog col-lg-9 col-md-9 col-sm-9 col-xs-9" >
+    <div class="modal-content">
+      <div class="modal-header" style="background: black;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="reset()"><span aria-hidden="true" style="color: white;">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: green;">Restaurant Order</h4>
+      </div>
+      <div class="modal-body" style="background: url('images/dine.png') no-repeat center center fixed;">
+ <!--top: 15px;right: 10px; position: absolute;-->
+
+  <div id="scrollList" style="border-radius: 20px;height:250px;width:200px;
+  border:2px solid green;font:16px/26px Georgia, Garamond, Serif; overflow:auto;">
+          <button id="addItem"><i class="fa fa-plus" style="color: green; margin-top: 20px;"></i></button> <!--top: 40px;left: 5px; position: absolute;-->
+          <select style="width: 80%; height: 35px;  opacity: 0.9; border-radius: 100px; " class=" btn-default" id="itemname"><option selected value="" style="color: green;">Select item name
+          </option>
+          <option value="Hamburger">Hamburger</option>
+          <option value="Cheeseburger">Cheeseburger</option>
+          <option value="Bacon Cheddar Cheeseburger">Bacon Cheddar Cheeseburger</option>
+          <option value="Veggie Burger">Veggie Burger</option>
+          <option value="Double Cheeseburger">Double Cheeseburger</option>
+                <br>
+          <option value="Fries">Fries</option>
+           <option value="Crunchy Onion Rings">Crunchy Onion Rings</option>
+                  <br>
+          <option value="Seasonal Vegetables">Seasonal Vegetables</option>
+          <option value="Ceasar Salad">Ceasar Salad</option>
+          <option value="Tuna Salad<">Tuna Salad</option>
+          <option value="Vegetables Salad<">Vegetables Salad</option>
+          <option value="Greec Salad<">Greec Salad</option>
+                  <br>
+          <option value="Chicken Wrap">Chicken Wrap</option>
+          <option value="Fajita">Fajita</option>
+          <option value="Francisco">Francisco</option>
+          <option value="Philadelphia">Philadelphia</option>
+          <option value="Steak">Steak</option>
+          <option value="Hot Turkey Sandwich">Hot Turkey Sandwich</option>
+         <option value="Grilled Cheese Sandwich ">Grilled Cheese Sandwich </option>
+        </select>
+        </div>
+
+
+        <br>
+        <input style="width: 35%; top: 40px;right: 10%; position: absolute; border-radius: 20px; border-color: green;" type="text" class="form-control" id="table" placeholder="Table no." ng-model="restaurant.table"></input><br>
+         <input style="width: 35%;top: 90px;right: 10%; position: absolute;  border-radius: 20px; border-color: green;" type="text" class="form-control" id="people" placeholder="People" ng-model="restaurant.people"></input>
+<br>
+         <input style="width: 55%; top: 300px;right:23%; position: absolute;  border-radius: 20px; border-color: green;" type="text" class="form-control" id="price" placeholder="Price" ng-model="restaurant.price"><div style="left: 15%;
+position: absolute;
+bottom: 8%">{{infoo.currency}}</div></input> 
+
+        <br>
+       
+      </div>
+      <div class="modal-footer" style="  background: black; height: 3%;">
+        <button type="button" class="button btn btn-success" ng-click="order()" style="width: 25%;">Order</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
