@@ -3,7 +3,7 @@ angular.module('CouchDB0', ['ngResource']).factory('ProjectCouch0', function($re
   
   //name and email view
   var ProjectCouch0 = $resource(':protocol//:server/:db/:q/:b', 
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb'}, {update: {method:'POST'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb'}, {update: {method:'POST'} }
    ); 
 
   //Just for Posting
@@ -43,7 +43,7 @@ angular.module('CouchDB', ['ngResource']).factory('ProjectCouch', function($reso
 {
 
   var ProjectCouch = $resource(':protocol//:server/:db/:d/:v/:vv/:t',
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', t:'emailpass'}, {update: {method:'PUT'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', t:'emailpass'}, {update: {method:'PUT'} }
    ); 
 
    ProjectCouch.prototype.update = function(cb) 
@@ -72,7 +72,7 @@ angular.module('CouchDB3', ['ngResource']).factory('viewGetter', function($resou
 {
   
   var viewGetter= $resource(':protocol//:server/:db/:d/:v/:vv/:us', 
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'emailpass'}, {update: {method:'PUT'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'emailpass'}, {update: {method:'PUT'} }
    ); 
 
   viewGetter.prototype.get = function(cb) 
@@ -88,7 +88,7 @@ angular.module('CouchDB2', ['ngResource']).factory('viewGetter2', function($reso
 {
   
   var viewGetter= $resource(':protocol//:server/:db/:d/:v/:vv/:us', 
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'allinout'}, {update: {method:'PUT'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'allinout'}, {update: {method:'PUT'} }
    ); 
 
   viewGetter.prototype.get = function(cb) 
@@ -104,7 +104,7 @@ angular.module('CouchDB_ORDER', ['ngResource']).factory('orders', function($reso
 {
   
   var orders = $resource(':protocol//:server/:db/:d/:v/:vv/:us', 
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'orders'}, {update: {method:'PUT'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'orders'}, {update: {method:'PUT'} }
    ); 
 
   orders.prototype.get = function(cb) 
@@ -120,7 +120,7 @@ angular.module('CouchDB33', ['ngResource']).factory('infoGetter', function($reso
 {
   
   var infoGetter= $resource(':protocol//:server/:db/:d/:v/:vv/:us', 
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'info'}, {update: {method:'PUT'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'info'}, {update: {method:'PUT'} }
    ); 
 
   infoGetter.prototype.get = function(cb) 
@@ -135,7 +135,7 @@ angular.module('CouchDB3333', ['ngResource']).factory('infoGetter3333', function
 {
   
   var infoGetter3333 = $resource(':protocol//:server/:db/:d/:v/:vv/:us', 
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'checkPastinPastout'}, {update: {method:'PUT'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb', d:'_design', v:'view', vv:'_view', us:'checkPastinPastout'}, {update: {method:'PUT'} }
    ); 
 
   infoGetter3333.prototype.get = function(cb) 
@@ -150,21 +150,21 @@ angular.module('CouchDB3333', ['ngResource']).factory('infoGetter3333', function
 
 angular.module('CouchDB1', ['ngResource']).factory('ProjectCouch1', function($resource) 
 {
-  return $resource(':protocol//:server/:db/:d/:v', {protocol: 'http:', server: 'localhost:5984', db:'seniordb'}, {}, 
+  return $resource(':protocol//:server/:db/:d/:v', {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb'}, {}, 
   {  query: { method: "POST" }
   });
 });
 
 angular.module('CouchDB1234', ['ngResource']).factory('ProjectCouch1234', function($resource) 
 {
-  return $resource(':protocol//:server/:db', {protocol: 'http:', server: 'localhost:5984', db:'seniordb'}, {}, 
+  return $resource(':protocol//:server/:db', {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb'}, {}, 
   {  save: { method: "POST" }
   });
 });
 
 angular.module('CouchDB0', ['ngResource']).factory('ProjectCouch0', function($resource) 
 {
-  return $resource(':protocol//:server/:db/:d/:v', {protocol: 'http:', server: 'localhost:5984', db:'seniordb'}, {}, 
+  return $resource(':protocol//:server/:db/:d/:v', {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb'}, {}, 
   {  query: { method: "GET" }
   });
 });
@@ -176,7 +176,7 @@ angular.module('CouchDB66', ['ngResource']).factory('ProjectCouch66', function($
 {
   
   var ProjectCouch66 = $resource(':protocol//:server/:db/:q', 
-    {protocol: 'http:', server: 'localhost:5984', db:'seniordb'}, {update: {method:'PUT'} }
+    {protocol: 'http:', server: '89.108.159.81:5984', db:'seniordb'}, {update: {method:'PUT'} }
    ); 
 
 
