@@ -1,0 +1,118 @@
+
+
+    
+    
+
+
+<!--<div class="image-upload">
+    <label for="file-input">
+        <img src="placeholder.jpg" class="img-circle" alt="" height="100" width="100" style="background: #b2b2b2;"/>
+    </label>
+
+<input id="FileInput" type="file" onchange="readURL(this,'Picture')" style="cursor: pointer;  display: none"/></div> -->
+
+
+
+
+
+
+
+
+
+
+<div class="outer">
+ 
+ <div class="row slider">
+
+  <div ng-repeat="pic in pics" > 
+    <img class="image img{{$index}}" src="{{pic}}" style="border: 40px solid black;"></img>
+  </div>
+
+
+  <div id="outerIndicator">
+    <div ng-repeat="pic in pics" class="indicatorsList">
+      <div class="indicator"  id="indicator{{$index}}" ng-click="slideTo($index)"></div>
+    </div>
+
+  </div>
+ </div>
+
+</div> 
+
+
+
+
+<div class="jumbotron" style=" top: 100px; position: fixed;  border-bottom: 7px solid #000; border-top: 7px solid orange; background: grey;  width: 100%; height: 30%; 
+z-index: 1;">
+
+<!--<div class="jumbotron" style="background: white; position: absolute; width: 45%; right: 0; bottom: -20px; height: 96.3%; z-index: 999999999; opacity: 0.7; border: 4px solid black; border-style: double">-->
+<div style="color: white; position: absolute; bottom: 3%; font-family: futura; right: 20%; border: 5px solid #000; 
+ border-radius: 5px; min-width: 555px; border-style: double; border-color: #aaa; height: 93%;">
+ <div style="position: relative; right: 0px; top: 0px;"> 
+      <div class="infooo" id="theusername">{{theuser.namee}} </div>
+
+      <div class="infooo" id="theuseremail">{{theuser.email}}</div>
+
+ <!--<div class="infooo" id="theuserpass"> {{theuser.pass}}</div>-->
+
+      <div class="infooo" id="theusergender">{{theuser.gender}}</div>
+
+      <div class="infooo" id="theuserdob">{{theuser.dob}}</div>
+
+      <div class="infooo" id="theusercountry">{{theuser.country}}</div>
+
+      <div class="infooo" id="theusercity">{{theuser.city}}</div>
+  </div>
+
+  <!--<div class="divider" style="position: relative; right: -50px; rotate: height: 100px;top: -100px; background-color: #ffffff; color: #ffffff;"></div> -->
+
+ <div style="position: relative; right: -270px; top: -180px;">
+      <div class="infooo" id="theusersalarydate">{{theuser.salary_date}}</div>
+
+      <div class="infooo" id="theusercurrency">{{theuser.currency}}</div>
+
+      <div class="infooo" id="theuserwork">{{theuser.currentWork}}</div>
+
+      <div class="infooo" id="theusersalary">{{theuser.currentSalary}}</div>
+
+      <div class="infooo" id="theuserothersalary">{{theuser.otherSalary}}</div>
+
+      <div class="infooo" id="theusersavings">{{theuser.savings}}</div>
+ </div>
+
+
+</div>
+</div>
+
+
+<div id="oooout">
+<div class="iiiin">
+
+ <!--<button ng-hide="profilepic == 0" class="thumbnail img-circle" id="chooseFile" data-inline="true" data-icon="plus" class="button" 
+ style="position: relative; width: 150px; height: 150px; background: #D3D3D3; z-index: 999999;">
+</button>-->
+
+<div class="jumbotron" style=" top: 100px; position: fixed; border-top: 7px solid orange;   background: grey; 
+opacity: 0.8; width: 30%; height: 29%; left: 0; z-index: 1; ">
+
+<img id="chooseFile" data-inline="true" data-icon="plus" class="img-circle img-round" src="{{theuser.pic}}" style="left: 28%; top: 14%;"></img>
+
+<div>
+ 
+    
+        
+          <div data-role="content">
+            
+            <div class="hiddenfile">
+              <input type="file"  data-clear-btn="false" name="image" accept="image/*" capture>
+            </div>
+
+            <div id="preview"></div>
+      </div>
+
+
+      </div>
+
+
+
+

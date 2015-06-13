@@ -1,0 +1,100 @@
+<style>
+     body 
+      {
+        background: url('images/backback.jpg') no-repeat center center fixed; //back3.png
+         background-color: #151515;
+        background-size: cover;
+        
+      }
+
+
+   #square {
+  width: 40px;
+  height: 40px;
+  background: red;
+  position: absolute;
+  bottom: 10%;
+  left: 30px;
+  padding: 20px;
+}
+
+    </style>
+
+
+<body>
+
+  <div style="position: absolute; top: 100px; width: 100%; height: 4%;left:0;background-color: beige; z-index: 11111111; border-bottom: 1px solid black;">
+<div style="font-family: futura; color: black; font-weight: normal; font-size: 15px; padding-top: 4px; position: relative;
+  padding-left: 30%;">These two charts allow you to track your pending expenses on a smaller scale.</div>
+</div>
+
+  <pre style="position: absolute;
+  background: beige;
+  bottom: 5%;
+  width: 100%;
+  height: 68%;
+  z-index: 9999999; border-radius: 66px; border: 43px solid black;
+  opacity: 0.8;">
+ <div id="outer5" class="col-lg-12 col-xs-12 col-md-12 col-sm-12" style=" z-index: 1111111;">
+  <div class="inner5">
+
+
+<div data-role="content" >
+	<div id="canvas-holder" style="color: white; "> 
+		<canvas id="incoming" width="350" height="350" style="position: fixed; bottom: 124px; left: 10%; z-index: 11111111;"></canvas> <!--MAX:&nbsp {{currency}}&nbsp{{salary}}-->
+   <!--<div ng-repeat="item in innn12" id="square"> 11 </div>-->
+   
+</div>
+	</div>
+</div>
+
+<div data-role="content" >
+<div id="canvas-holder" > 
+    <canvas id="outgoing" width="350" height="350" style="position: fixed; bottom: 124px; right: 19%; z-index: 11111111;"></canvas>
+    
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+
+</pre>
+
+
+<!--<canvas id="base" class="chart-base" chart-type="type" data="data"
+  labels="labels" legend="true"></canvas> -->
+
+
+
+
+
+<!--<nav class="navbar navbar-default navbar-fixed-bottom" style="position: fixed; bottom: 40px; height: 3%; opacity: 0.6; background: #151515; border-top: 5px solid #000; z-index: 9999999;">
+
+<a id="weekly" class="col-lg-3 col-md-3 col-sm-3 col-xs-3"  style="padding-left: 10%;  border: 1px solid grey; border-radius: 20px;">
+  <font face="futura">Weekly</font></a>
+
+<div id="outer333" >
+  <div class="inner333 col-lg-3 col-md-3 col-sm-3 col-xs-3" style=" left: 37%; border: 1px solid grey; border-radius: 20px;">
+    <a id="monthly" ><font face="futura">Monthly</font></a>
+  </div>
+</div>
+
+<a id="yearly" class="col-lg-3 col-md-3 col-sm-3 col-xs-3"  style="padding-left: 10%; border: 1px solid grey; border-radius: 20px;">
+  <font face="futura">Yearly</font></a>
+</nav>-->
+
+
+
+<nav class="navbar navbar-default navbar-fixed-bottom" style="position: fixed; bottom: 0;  height: 3%;opacity: 1; background: #151515; border-top: 5px solid #000; z-index: 9999999;">
+
+<a id="incoming" class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style=" left: 10%; padding-left: 12%;">
+  <font face="futura">Incoming</font></a>
+<a id="outgoing" class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="right: 10%; padding-left: 12%;"><font face="futura">Outgoing</font></a>
+</nav>
+
+
+<div class="jumbotron" style="bottom: -30px; position: absolute;  background: black; opacity: 0.1; width: 100%; height: 100%; 
+z-index: 1;"></div>
+</body>

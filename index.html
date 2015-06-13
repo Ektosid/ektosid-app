@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>App</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="keywords" content="input, text, effect, focus, transition, interaction, inspiration, web design" />
+    <script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
+    <!--<link href="css/font-awesome.css" rel="stylesheet"/>-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+
+    
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="lib/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <!--<script type="text/javascript" src="lib/ui-bootstrap-tpls-0.12.1.js"></script>-->
+
+
+
+    <script type="text/javascript" src="lib/angular/resource.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-cookies.min.js"></script>
+  
+    <script type="text/javascript" src="lib/Chart.js"></script>
+    <script type="text/javascript" src="lib/Chart.min.js"></script>
+
+    <script type="text/javascript" src="lib/angular/angular-md5.min.js"></script>
+   
+    <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-md5/0.1.7/angular-md5.min.js.map
+"></script>-->
+
+      <script type="text/javascript" src="js/app.js"></script>
+
+
+   
+
+    <script type="text/javascript" src="js/walletController.js"></script>
+    <script type="text/javascript" src="js/signupController.js"></script>
+    <script type="text/javascript" src="js/loginController.js"></script>
+    <script type="text/javascript" src="js/pastinpastoutController.js"></script>
+    <script type="text/javascript" src="js/chartController.js"></script>
+    <script type="text/javascript" src="js/freeplacesController.js"></script>
+    <script type="text/javascript" src="js/profileController.js"></script>
+
+    <script type="text/javascript" src="js/databaseServices.js"></script>
+    
+    <script type="text/javascript" src="js/start_Filter.js"></script>
+    <script type="text/javascript" src="js/length_filter.js"></script>
+
+    <script type="text/javascript" src="lib/bootstrap.min.js"></script>
+
+
+
+
+
+
+      
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="css/style.css"> 
+      <style>
+      body 
+      {
+        background: url('images/back3.png') no-repeat center center fixed 0.9; 
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body ng-app="myApp">
+
+    <div ng-view></div>
+
+  <font face="futura">
+
+
+
+  <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" style="border-top: 7px solid orange; opacity: 0.9; background: #151515; border-bottom: 5px solid #000; z-index: 9999999; min-height: 100px;">
+
+      <div class="container">
+
+        <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="#/logsin" style="left: -10px; top: 2px; z-index: 9999999999999999; position: relative; text-decoration: none; color: orange; font-family: futura; font-size: 27px; font-weight: bold; text-shadow : 0px 0px 7px white;">Ektosid</a>
+
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse actionBar" style="border-top: 1px solid orange;">
+          
+          <ul class="nav navbar-nav nav-pills" id="headernav" style=" position: relative; padding: 0; top: 0px; left: 8%;">
+
+
+<li id="liii" class="pro" role="presentation" ><a href="#/profile"  id="page"  class="profile1"><font face="futura" style="font-height: bold;">
+  <b><i class="fa fa-user" style="color: orange;"></i>&nbsp; Profile</b></font></a></li>
+<li id="liii" role="presentation" class="wal"><a href="#/wallet"  id="page"  class="wallet1"><font face="futura"><b>
+  <i class="fa fa-money" style="color: orange;"></i>&nbsp; Wallet</b></font></a></li>
+<li id="liii" role="presentation" class="pas"><a href="#/pastinpastout"  id="page"  class="pastinout1"><font face="futura"><b>
+  <i class="fa fa-archive" style="color: orange;"></i>&nbsp; Archive </b></font></a></li>
+<li id="liii" role="presentation" class="cha"><a href="#/chart"  id="page"  class="chart1"><font face="futura"><b>
+  <i class="fa fa-bar-chart-o" style="color: orange;"></i>&nbsp; Chart</b></font></a></li>
+<li id="liii" role="presentation" class="fre"><a href="#/freeplaces"  id="page"  class="freeplaces1"><font face="futura"><b>
+  <i class="fa fa-location-arrow" style="color: orange;"></i>&nbsp; Nearby Events</b></font></a></li>
+
+
+<li id="liii" role="presentation" class="log" style=" left: 10px;"><a href="#"  id="page" ><font face="futura">
+   <i class="fa fa-sign-out" style="color: orange;"></i>&nbsp; Logout</font></a></li>
+
+
+
+          </ul>
+         
+        </div>
+
+      </div>
+
+    </nav> 
+
+
+
+
+
+<!--<nav class="navbar navbar-default navbar-fixed-top" style="border-top: 7px solid orange; opacity: 0.9; background: #151515; border-bottom: 5px solid #000; z-index: 9999999; 
+   min-height: 100px;">
+
+
+    <div style=" left: 15px; top: 25px; position:relative; "><a href="#/logsin" style="z-index: 9999999999999999; position: relative; text-decoration: none; color: orange; font-family: futura; font-size: 27px; font-weight: bold; text-shadow : 0px 0px 7px white;">Ektosid</a></div>
+
+<div id="outer0">
+<div class="inner0">
+
+<ul id="headernav"  class="nav nav-pills" style=" position: relative; padding: 0; top: 10px; "> 
+
+
+<li id="liii" class="pro" role="presentation" ><a href="#/profile"  id="page"  class="profile1"><font face="futura" style="font-height: bold;">
+  <b><i class="fa fa-user" style="color: orange;"></i>&nbsp; Profile</b></font></a></li>
+<li id="liii" role="presentation" class="wal"><a href="#/wallet"  id="page"  class="wallet1"><font face="futura"><b>
+  <i class="fa fa-money" style="color: orange;"></i>&nbsp; Wallet</b></font></a></li>
+<li id="liii" role="presentation" class="pas"><a href="#/pastinpastout"  id="page"  class="pastinout1"><font face="futura"><b>
+  <i class="fa fa-archive" style="color: orange;"></i>&nbsp; Archive </b></font></a></li>
+<li id="liii" role="presentation" class="cha"><a href="#/chart"  id="page"  class="chart1"><font face="futura"><b>
+  <i class="fa fa-bar-chart-o" style="color: orange;"></i>&nbsp; Chart</b></font></a></li>
+<li id="liii" role="presentation" class="fre"><a href="#/freeplaces"  id="page"  class="freeplaces1"><font face="futura"><b>
+  <i class="fa fa-location-arrow" style="color: orange;"></i>&nbsp; Nearby Events</b></font></a></li>
+
+
+<li id="liii" role="presentation" class="log" style=" left: 10px;"><a href="#"  id="page" ><font face="futura">
+   <i class="fa fa-sign-out" style="color: orange;"></i>&nbsp; Logout</font></a></li>
+
+</ul>
+
+</div>
+</div>
+
+</nav>-->
+
+
+
+
+
+
+</font>
+
+
+<nav id="footernav" class="navbar navbar-fixed-bottom" style="opacity: 0.9; background: #151515; border-top: 5px solid #000; z-index: 99999999999;">
+   
+               <div style="left: 10px; position: relative; top:15px; font-family: futura; font-height: normal; font-size: 10px; color: orange;">Copyright Ektosid © 2015</div>   
+               <a style="left: 150px; position: absolute; bottom:15px; font-family: futura; font-height: normal; font-size: 10px; color: white; z-index: 99999999999; cursor: pointer;">Terms & Conditions </a>   
+
+               <a id="privacy" style="left: 245px; position: absolute; bottom:15px; font-family: futura; font-height: normal; font-size: 10px; color: white; z-index: 9999999999; cursor: pointer;">Privacy</a>  
+                        
+   <!-- <div id="out">
+      <div class="in">-->
+
+
+
+ <a style=" z-index: 99999999999; right: 20px; top: 3px; position: absolute;  color: #133783; font-size: 18px;" 
+ class="btn btn-facebook" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+ 
+ <a style=" right: 40px; top: 3px; z-index: 99999999999; position: absolute;color: #1c95d0;font-size: 18px;" class="btn btn-twitter" href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+  
+  <a style="right: 70px; top: 3px;  z-index: 99999999999; position: absolute; color: 60a9ce;font-size: 18px;" class="btn btn-linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                   
+   <a style="right: 100px; top: 3px;  z-index: 99999999999; position: absolute; color: #5c88ab;font-size: 18px;" class="btn btn-instagram" href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+
+
+   <!-- </div></div>-->
+
+  </nav>
+
+
+  </body>
+</html>
+
+
+

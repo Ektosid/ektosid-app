@@ -1,0 +1,65 @@
+<style>
+     body 
+      {
+        background: url('images/backback.jpg') no-repeat center center fixed; //back3.png
+         background-color: #151515;
+        background-size: cover;
+        
+      }
+
+    </style><br>
+<br>
+<br>
+<br>
+<br>
+<body>
+<font face="futura">
+
+
+
+<div class="bs-example1 col-lg-12 col-sm-12 col-xs-12 col-md-12" style="position: relative;">
+
+    <div class="list-groupp" ng-repeat="item in ppaasstt | startFrom: 2" > <!--| startFrom: 2-->
+        <a id="groupy" href="" class="list-group-item">
+          <img id="index" src="{{item.pic}}" alt="images/exp.png"></img>
+             <div id="pencil"><i class="fa fa-pencil"></i></div><div id="item">{{item.name}} </div>          
+            <div id="money"><i class="fa fa-money"></i></div><div id="value">{{item.currency}} &nbsp;{{item.value}}</div>         
+            <div id="datee"><i class="fa fa-calendar-o"></i></div><div id="date">{{item.date}}</div>   
+        
+   
+   <!-- <div ng-repeat="item in notificationss | startFrom: 1" 
+    style="position: relative; top: -266px; margin-left: 90%; padding-bottom: 33px;">-->
+      <div ng-if="notificationss[$index].value == 'in' " style="position: relative; left: 80%;"><div style="color: orange; "><i class="fa fa-arrow-down"><h style="margin-left: -60px; color: white; font-family: futura; font-weight: bold;">Type:&nbsp;</h></i>&nbsp;&nbsp;&nbsp;&nbsp;In</div></div>
+      <div ng-if="notificationss[$index].value == 'out' " style="position: relative; left: 80%;"><div style="color: orange; "><i class="fa fa-arrow-up"></i><h style="margin-left: -60px; color: white; font-family: futura; font-weight: bold;">Type:&nbsp;</h></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Out</div></div>
+
+      </a>
+    <!--</div>-->
+     </div>
+
+
+</div>
+
+
+<div style="margin-top: -270px; position: relative; opacity: 0;" class=" col-lg-7 col-md-7 col-sm-7 col-xs-7">
+ <img src="images/Ease-of-Use.jpg" style="border-radius: 30px;  border: 1px solid black; height: 222px; width: 222px;  ">
+ <div class="textt" style="  position: relative; bottom: 265px; left: 0; color: white; text-shadow: 0 -1px 1px #000; padding-left: 5px; font-family: futura; font-size: 17px;">
+  <b>It's easy to use</b></div>
+<div  style="background: white; opacity: 0.6;   width: 200px; left: 20px; position: relative; border-radius: 5px; color: black; padding-left: 5px;">Usability means thinking about how and why people use a product. Usability means evaluation. Usability means more than just "ease of use". Usability means user-centered design.
+ </div></img> <!--left: 240px; top: -245px;-->
+</div>
+
+
+
+<!--<nav class="navbar navbar-default navbar-fixed-bottom" style="position: relative; margin-bottom: 0; opacity: 0.9; background: #151515; border-top: 5px solid #000; z-index: 9999999; height: 80px; ">
+
+<a id="incoming" class="col-lg-3 col-md-3 col-sm-3 col-xs-3"  style="padding-left: 8%; left: 38%; border: 1px solid orange; border-radius: 20px; color: orange;"><font face="futura">Download Report</font></a>
+
+</nav>-->
+
+<my-download id="content" get-data="getBlob()" />
+
+</font>
+
+
+
+</body>
